@@ -12,3 +12,7 @@ Minecraft Java Edition resource pack that retextures the bow as a tiny wrist-mou
 For the forward swing behavior, download `web-shooters-datapack.zip` and place it in the world's `datapacks` folder, then run `/reload`. Aim where you want to move and right-click with the bow. The datapack gives a short forward burst with a 12-tick cooldown.
 
 The datapack is designed for Java Edition 1.20.1. It provides a lightweight swing burst rather than true block-anchored rope physics; that deeper behavior requires a mod or server plugin.
+
+## Spigot 1.8.8
+
+For Minecraft 1.8.8 servers, download `web-shooters-1.8.8.zip`. Put the included JAR in the server's `plugins` folder and restart the server. Use the bow and right-click to launch forward like a web-swing. The plugin cancels normal arrow firing and includes configurable cooldown, swing strength, and upward boost values in `config.yml`.

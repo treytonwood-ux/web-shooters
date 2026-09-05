@@ -1,0 +1,5 @@
+name: WebShooters
+version: 1.0.0
+main: com.treytonwood.webshooters.WebShootersPlugin
+author: treytonwood
+description: Turns bow right-click into a wrist web-shooter swing for Spigot 1.8.8.
