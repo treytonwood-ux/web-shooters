@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "use_bow": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "minecraft:bow"
+          ]
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "webshooters:use_bow"
+  }
+}

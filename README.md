@@ -1,2 +1,14 @@
-# web-shooters
-you can become spiderman
+# Web Shooters
+
+Minecraft Java Edition resource pack that retextures the bow as a tiny wrist-mounted web-shooter.
+
+## Install
+
+1. Download `web-shooters.zip`.
+2. Place it in `.minecraft/resourcepacks`.
+3. Enable it from the Minecraft resource pack menu.
+4. Hold a bow and right-click to use the web-shooter visuals.
+
+For the forward swing behavior, download `web-shooters-datapack.zip` and place it in the world's `datapacks` folder, then run `/reload`. Aim where you want to move and right-click with the bow. The datapack gives a short forward burst with a 12-tick cooldown.
+
+The datapack is designed for Java Edition 1.20.1. It provides a lightweight swing burst rather than true block-anchored rope physics; that deeper behavior requires a mod or server plugin.
