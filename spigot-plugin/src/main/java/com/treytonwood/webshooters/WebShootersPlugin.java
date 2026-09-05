@@ -5,15 +5,12 @@ import java.util.Map;
 import java.util.UUID;
 
 import org.bukkit.Effect;
-import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.Action;
-import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.inventory.ItemStack;
+import org.bukkit.event.player.PlayerFishEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.util.Vector;
 
@@ -27,17 +24,10 @@ public final class WebShootersPlugin extends JavaPlugin implements Listener {
     }
 
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
-    public void onPlayerInteract(PlayerInteractEvent event) {
-        Action action = event.getAction();
-        if (action != Action.RIGHT_CLICK_AIR && action != Action.RIGHT_CLICK_BLOCK) {
+    public void onPlayerFish(PlayerFishEvent event) {
+        if (event.getState() != PlayerFishEvent.State.IN_GROUND) {
             return;
         }
-
-        ItemStack item = event.getItem();
-        if (item == null || item.getType() != Material.BOW) {
-            return;
-        }
-
         Player player = event.getPlayer();
         long now = System.currentTimeMillis();
         long cooldownUntil = cooldowns.containsKey(player.getUniqueId())
@@ -49,8 +39,9 @@ public final class WebShootersPlugin extends JavaPlugin implements Listener {
         cooldowns.put(player.getUniqueId(), now + getConfig().getLong("cooldown-milliseconds"));
         event.setCancelled(true);
 
-        Vector direction = player.getEyeLocation().getDirection().normalize();
-        Vector velocity = direction.multiply(getConfig().getDouble("swing-strength"));
+        Vector pullDirection = event.getHook().getLocation().toVector()
+            .subtract(player.getLocation().toVector()).normalize();
+        Vector velocity = pullDirection.multiply(getConfig().getDouble("pull-strength"));
         velocity.setY(velocity.getY() + getConfig().getDouble("upward-boost"));
         player.setVelocity(velocity);
         player.setFallDistance(0.0F);
