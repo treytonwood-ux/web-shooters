@@ -17,7 +17,7 @@ The datapack is designed for Java Edition 1.20.1. It provides a lightweight swin
 
 For Minecraft 1.8.8 servers, download `web-shooters-1.8.8.zip`. Put the included JAR in the server's `plugins` folder and restart the server. Use the fishing rod and reel in after the hook lands to pull toward it. The plugin includes configurable cooldown, pull strength, and upward boost values in `config.yml`.
 
-If Spigot is blocked, use the vanilla command-block setup in `vanilla-1.8.8/README.txt`. It works in a cheated 1.8.8 world without a server plugin, but it cannot cancel normal arrow firing.
+If Spigot is blocked, use the vanilla command-block setup in `vanilla-1.8.8/README.txt` and the `web-shooters-resourcepack-1.8.8.zip` pack. It works in a cheated 1.8.8 world without a server plugin.
 
 ## Spigot 1.12.2
 
