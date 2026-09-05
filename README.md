@@ -16,3 +16,5 @@ The datapack is designed for Java Edition 1.20.1. It provides a lightweight swin
 ## Spigot 1.8.8
 
 For Minecraft 1.8.8 servers, download `web-shooters-1.8.8.zip`. Put the included JAR in the server's `plugins` folder and restart the server. Use the bow and right-click to launch forward like a web-swing. The plugin cancels normal arrow firing and includes configurable cooldown, swing strength, and upward boost values in `config.yml`.
+
+If Spigot is blocked, use the vanilla command-block setup in `vanilla-1.8.8/README.txt`. It works in a cheated 1.8.8 world without a server plugin, but it cannot cancel normal arrow firing.
