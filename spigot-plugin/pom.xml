@@ -10,6 +10,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
+    <spigot-api-version>1.8.8-R0.1-SNAPSHOT</spigot-api-version>
+    <plugin-final-name>web-shooters-1.8.8</plugin-final-name>
   </properties>
 
   <repositories>
@@ -27,7 +29,7 @@
     <dependency>
       <groupId>org.spigotmc</groupId>
       <artifactId>spigot-api</artifactId>
-      <version>1.8.8-R0.1-SNAPSHOT</version>
+      <version>${spigot-api-version}</version>
       <scope>provided</scope>
       <exclusions>
         <exclusion>
@@ -39,7 +41,7 @@
   </dependencies>
 
   <build>
-    <finalName>web-shooters-1.8.8</finalName>
+    <finalName>${plugin-final-name}</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -48,4 +50,14 @@
       </plugin>
     </plugins>
   </build>
+
+  <profiles>
+    <profile>
+      <id>mc-1.12.2</id>
+      <properties>
+        <spigot-api-version>1.12.2-R0.1-SNAPSHOT</spigot-api-version>
+        <plugin-final-name>web-shooters-1.12.2</plugin-final-name>
+      </properties>
+    </profile>
+  </profiles>
 </project>

@@ -54,7 +54,15 @@ public final class WebShootersPlugin extends JavaPlugin implements Listener {
         velocity.setY(velocity.getY() + getConfig().getDouble("upward-boost"));
         player.setVelocity(velocity);
         player.setFallDistance(0.0F);
-        player.getWorld().playSound(player.getLocation(), Sound.SHOOT_ARROW, 0.8F, 1.8F);
+        player.getWorld().playSound(player.getLocation(), arrowShootSound(), 0.8F, 1.8F);
         player.getWorld().playEffect(player.getEyeLocation(), Effect.SMOKE, 0);
+    }
+
+    private Sound arrowShootSound() {
+        try {
+            return Sound.valueOf("ENTITY_ARROW_SHOOT");
+        } catch (IllegalArgumentException exception) {
+            return Sound.valueOf("SHOOT_ARROW");
+        }
     }
 }
